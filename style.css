@@ -3,12 +3,20 @@
     height: 400px;
     display: flex;
     flex-wrap: wrap;
-    background-color: black;
+    background-color: blue;
 }
 
 .grid div{
     width: 40px;
     height: 40px;
-    background-color: red;
 }
 
+.grid-computer{
+
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+background-color: lightgreen;
+}
+s
