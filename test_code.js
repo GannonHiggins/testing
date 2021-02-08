@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let randomStart = Math.abs(Math.random() * computerSquares.length - [ship.directions[0].length*direction]) 
 
-        const isTaken = current.some(index => computerSquares[randomStart+index].classList.contains('taken'))
+        const isTaken = current.some(index => computerSquares[randomStart + index].classList.contains('taken'))
         const isAtRightEdge = current.some(index =>(randomStart + index) % width === width - 1)
         const isAtLeftEdge = current.some(index => (randomStart +index) % width === 0)
         
