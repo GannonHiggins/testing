@@ -111,17 +111,25 @@ function rotate(){
 
     if(isHorizontal){
     destroyer.classList.toggle('destroyer-container-vertical')
-    destroyer.classList.toggle('submarine-container-vertical')
-    destroyer.classList.toggle('cruiser-container-vertical')
-    destroyer.classList.toggle('battleship-container-vertical')
-    destroyer.classList.toggle('carrier-container-vertical')
+    submarine.classList.toggle('submarine-container-vertical')
+    cruiser.classList.toggle('cruiser-container-vertical')
+    battleship.classList.toggle('battleship-container-vertical')
+    carrier.classList.toggle('carrier-container-vertical')
     isHorizontal = false
+    return
     }
-
-
-
+    
+    if(!isHorizontal){
+        destroyer.classList.toggle('destroyer-container')
+        submarine.classList.toggle('submarine-container')
+        cruiser.classList.toggle('cruiser-container')
+        battleship.classList.toggle('battleship-container')
+        carrier.classList.toggle('carrier-container')
+        isHorizontal = true
+        return
+    }
 }
-
+console.log(isHorizontal)
 rotateButton.addEventListener('click',rotate)
 
 
