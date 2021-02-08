@@ -107,29 +107,28 @@ generate(shipArray[3])
 generate(shipArray[4])
 
 //rotate the ships
-function rotate(){
-
-    if(isHorizontal){
-    destroyer.classList.toggle('destroyer-container-vertical')
-    submarine.classList.toggle('submarine-container-vertical')
-    cruiser.classList.toggle('cruiser-container-vertical')
-    battleship.classList.toggle('battleship-container-vertical')
-    carrier.classList.toggle('carrier-container-vertical')
-    isHorizontal = false
-    return
+function rotate() {
+    if (isHorizontal) {
+      destroyer.classList.toggle('destroyer-container-vertical')
+      submarine.classList.toggle('submarine-container-vertical')
+      cruiser.classList.toggle('cruiser-container-vertical')
+      battleship.classList.toggle('battleship-container-vertical')
+      carrier.classList.toggle('carrier-container-vertical')
+      isHorizontal = false
+      console.log(isHorizontal)
+      return
     }
-    
-    if(!isHorizontal){
-        destroyer.classList.toggle('destroyer-container')
-        submarine.classList.toggle('submarine-container')
-        cruiser.classList.toggle('cruiser-container')
-        battleship.classList.toggle('battleship-container')
-        carrier.classList.toggle('carrier-container')
-        isHorizontal = true
-        return
+    if (!isHorizontal) {
+      destroyer.classList.toggle('destroyer-container-vertical')
+      submarine.classList.toggle('submarine-container-vertical')
+      cruiser.classList.toggle('cruiser-container-vertical')
+      battleship.classList.toggle('battleship-container-vertical')
+      carrier.classList.toggle('carrier-container-vertical')
+      isHorizontal = true
+      console.log(isHorizontal)
+      return
     }
-}
-console.log(isHorizontal)
+  }
 rotateButton.addEventListener('click',rotate)
 
 
