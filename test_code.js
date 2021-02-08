@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const userSquares = []
     const computerSquares = []
     let isHorizontal = true;
-    let isGameOver = true
+    let isGameOver = false
     let currentPlayer = 'user'
 
 
