@@ -129,7 +129,7 @@ function rotate() {
       return
     }
   }
-rotateButton.addEventListener('click',rotate)
+rotateButton.addEventListener('click',rotate())
 
 
 
