@@ -64,6 +64,7 @@ background-color: yellow;
     background-color: pink;
     margin: 10px;
     display: flex;
+    flex-wrap: wrap;
 }
 .cruiser-container{
     width: 120px;
@@ -79,6 +80,7 @@ background-color: yellow;
     background-color: red;
     margin: 10px;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .battleship-container{
@@ -95,6 +97,7 @@ background-color: yellow;
     background-color: black;
     margin: 10px;
     display: flex;
+    flex-wrap: wrap;
 }
 
 
@@ -112,6 +115,7 @@ background-color: yellow;
     background-color: purple;
     margin: 10px;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .ship div{
