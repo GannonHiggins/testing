@@ -84,3 +84,20 @@ height: 40px;
 background-color: orange;
 
 }
+.submarine{
+    background-color:pink;
+    
+}
+.cruiser{
+    background-color:red;
+    
+}
+.battleship{
+    background-color: black;
+    
+}
+
+.carrier{
+    background-color: purple;
+    
+}
