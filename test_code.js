@@ -257,10 +257,11 @@ function revealSquare(square) {
   let cpuBattleshipCount = 0
   let cpuCarrierCount = 0
 
+  
 function computerGo() {
     let random = Math.floor(Math.random() * userSquares.length)
     if (!userSquares[random].classList.contains('boom')) {
-      userSquares[random].classList.add('boom')
+      userSquares[random].classList.add('miss')
       if (userSquares[random].classList.contains('destroyer')) cpuDestroyerCount++
       if (userSquares[random].classList.contains('submarine')) cpuSubmarineCount++
       if (userSquares[random].classList.contains('cruiser')) cpuCruiserCount++

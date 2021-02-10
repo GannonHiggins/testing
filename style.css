@@ -66,6 +66,7 @@ background-color: yellow;
     display: flex;
     flex-wrap: wrap;
 }
+
 .cruiser-container{
     width: 120px;
     height: 40px;
@@ -148,7 +149,6 @@ background-color: orange;
 
 .boom{
 background-color:red;
-
 }
 
 .miss{
