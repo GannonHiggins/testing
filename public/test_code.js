@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const rotateButton = document.querySelector('#rotate')
   const turnDisplay = document.querySelector('#whose-go')
   const infoDisplay = document.querySelector('#info')
+  const singlePlayerButton = document.querySelector('#singlePlayerButton')
+  const multiPlayerButton = document.querySelector('#multiPlayerButton')
   const userSquares = []
   const computerSquares = []
   let isHorizontal = true
@@ -26,6 +28,16 @@ document.addEventListener('DOMContentLoaded', () => {
   let shotFired = -1;
 
 
+  //select player mode
+  singlePlayerButton.addEventListener('click', startSinglePlayer)
+  multiPlayerButton.addEventListener('click', startMultiPlayer)
+
+  
+
+//multiplayer function 
+function startMultiPlayer(){
+  gameMode = 'multiPlayer'
+
   const socket = io();
 
   //get your player number
@@ -39,6 +51,26 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log(playerNum)
     }
   })
+  //another player has connected or disconnected 
+  socket.on('player-connection', num => {
+    console.log(`player-number ${num} has connected or disconnected`)
+  })
+}
+
+
+//single player function
+function startSinglePlayer(){
+  gameMode = "singlePlayer"
+
+  generate(shipArray[0])
+  generate(shipArray[1])
+  generate(shipArray[2])
+  generate(shipArray[3])
+  generate(shipArray[4])
+  
+  startButton.addEventListener('click', playGameSingle)
+}
+
 
   //Create Board
   function createBoard(grid, squares) {
@@ -107,11 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     else generate(ship)
   }
-  generate(shipArray[0])
-  generate(shipArray[1])
-  generate(shipArray[2])
-  generate(shipArray[3])
-  generate(shipArray[4])
+ 
 
   //Rotate the ships
   function rotate() {
@@ -212,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   //Game Logic
-  function playGame() {
+  function playGameSingle() {
     if (isGameOver) return
     if (currentPlayer === 'user') {
       turnDisplay.innerHTML = 'Your Go'
@@ -225,7 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(computerGo, 1000)
     }
   }
-  startButton.addEventListener('click', playGame)
+  
 
   let destroyerCount = 0
   let submarineCount = 0
@@ -249,7 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     checkForWins()
     currentPlayer = 'computer'
-    playGame()
+    playGameSingle()
   }
 
   let cpuDestroyerCount = 0
@@ -327,6 +355,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function gameOver() {
     isGameOver = true
-    startButton.removeEventListener('click', playGame)
+    startButton.removeEventListener('click', playGameSingle)
   }
 })
