@@ -1,38 +1,3 @@
-<<<<<<< HEAD:public/test_code.js
- document.addEventListener('DOMContentLoaded', () => {
-    const userGrid = document.querySelector('.grid-user')
-    const computerGrid = document.querySelector('.grid-computer')
-    const displayGrid = document.querySelector('.grid-display')
-    const ships = document.querySelectorAll('.ship')
-    const destroyer = document.querySelector('.destroyer-container')
-    const submarine = document.querySelector('.submarine-container')
-    const cruiser = document.querySelector('.cruiser-container')
-    const battleship = document.querySelector('.battleship-container')
-    const carrier = document.querySelector('.carrier-container')
-    const startButton = document.querySelector('#start')
-    const rotateButton = document.querySelector('#rotate')
-    const turnDisplay = document.querySelector('#whose-go')
-    const infoDisplay = document.querySelector('#info')
-    const userSquares = []
-    const computerSquares = []
-    let isHorizontal = true;
-    let isGameOver = false
-    let currentPlayer = 'user'
-
-
-    const width = 10
-
-    //create boards
-    function createBoard(grid, squares){
-        for(let i=0; i< width*width; i++){
-            const square = document.createElement('div')
-            square.dataset.id = i
-            grid.appendChild(square)
-            squares.push(square) 
-
-        }
-
-=======
 document.addEventListener('DOMContentLoaded', () => {
   const userGrid = document.querySelector('.grid-user')
   const computerGrid = document.querySelector('.grid-computer')
@@ -54,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentPlayer = 'user'
   const width = 10
 
+  const socket = io();
+
   //Create Board
   function createBoard(grid, squares) {
     for (let i = 0; i < width*width; i++) {
@@ -61,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
       square.dataset.id = i
       grid.appendChild(square)
       squares.push(square)
->>>>>>> ae7193a8d92138b49b1f7e3539bf17b8ccf81cf1:test_code.js
     }
   }
   createBoard(userGrid, userSquares)

@@ -14,3 +14,9 @@ app.use(express.static(path.join(__dirname, "public")))
 
 //start server
 server.listen(PORT, () => console.log('server running on port ${PORT}'))
+
+//handle a socket connection request from web client 
+io.on('connection', socket =>{
+    console.log('New WS Connection')
+})
+
