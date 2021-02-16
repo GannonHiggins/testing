@@ -54,7 +54,15 @@ function startMultiPlayer(){
   //another player has connected or disconnected 
   socket.on('player-connection', num => {
     console.log(`player-number ${num} has connected or disconnected`)
+    playerConnectedOrDisconnected(num)
   })
+
+  function playerConnectedOrDisconnected(num){
+    let player = `.p${parseInt(num)+1}`
+    document.querySelector(`${player} .connected span`).classList.toggle('green')
+    if(parseInt(num) === playerNum) document.querySelector(player).style.fontWeight = 'bold'
+  }
+
 }
 
 
