@@ -1,0 +1,20 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "this repository is used for me to test HTML and JavaScript as well as CSS",
+  "main": "test_code.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GannonHiggins/testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GannonHiggins/testing/issues"
+  },
+  "homepage": "https://github.com/GannonHiggins/testing#readme"
+}
