@@ -13,10 +13,29 @@ const io = socketio(server)
 app.use(express.static(path.join(__dirname, "public")))
 
 //start server
-server.listen(PORT, () => console.log('server running on port ${PORT}'))
+server.listen(PORT, () => console.log(`server running on port ${PORT}`))
 
 //handle a socket connection request from web client 
-io.on('connection', socket =>{
-    console.log('New WS Connection')
-})
+const connections = [null, null]
 
+io.on('connection', socket =>{
+    //console.log('New WS Connection')
+
+    //find an available player number
+    let playerIndex = -1;
+    for(const i in connections){
+        if (connections[i] === null){
+            playerIndex = i
+            break
+        }
+    }
+
+    //tell the connecting client what player number they are 
+    socket.emit('player-number', playerIndex)
+
+    console.log(`Player ${playerIndex} has connected`)
+
+    
+      //ignore player 3
+      if (playerIndex === -1) return
+})
